@@ -10,15 +10,13 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r}
-dialogue <- c('¤p©ú»¡¡G"©ú¤Ñ¤£¥Î¤W½Ò¡C"',
-               '¤pªá»¡¡G"¯uªº¶Ü¡H"')
+dialogue <- c('å°æ˜Žèªªï¼š"æ˜Žå¤©ä¸ç”¨ä¸Šèª²ã€‚"','å°èŠ±èªªï¼š"çœŸçš„å—Žï¼Ÿ"')
 
 cat(dialogue, sep="\n")
 ```
 
 ```{r}
-dialogue <- c("¤p©ú»¡¡G'©ú¤Ñ¤£¥Î¤W½Ò¡C'",
-               "¤pªá»¡¡G'¯uªº¶Ü¡H'")
+dialogue <- c("å°æ˜Žèªªï¼š'æ˜Žå¤©ä¸ç”¨ä¸Šèª²ã€‚'","å°èŠ±èªªï¼š'çœŸçš„å—Žï¼Ÿ'")
 
 cat(dialogue, sep="\n")
 ```
@@ -29,14 +27,12 @@ class(aLogical)
 ```
 
 ```{r}
-# ¥[Á`¦V¶q¤ºªº©Ò¦³¤¸¯À­È¡C
+# åŠ ç¸½å‘é‡å…§çš„æ‰€æœ‰å…ƒç´ å€¼ã€‚
 sum(aLogical)
 ```
 
 ```{r}
-studentMajors <- factor(
-  c("¸gÀÙ¨t", "¸gÀÙ¨t", "ªk«ß¨t")
-)
+studentMajors <- factor(c("ç¶“æ¿Ÿç³»","ç¶“æ¿Ÿç³»","æ³•å¾‹ç³»"))
 ```
 
 ```{r}
@@ -46,5 +42,19 @@ levels(studentMajors)
 
 ```{r}
 studentMajors
+```
+
+```{r}
+as.integer(studentMajors)
+```
+
+```{r}
+stringInteger <- c("1","2","-11")
+class(stringInteger) # ç„¡æ³•é€²è¡Œæ•¸å€¼é‹ç®—
+```
+
+```{r}
+trueInteger <- as.integer(stringInteger)
+class(trueInteger) # å¯ä»¥é€²è¡Œæ•¸å€¼é‹ç®—
 ```
 
