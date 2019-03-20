@@ -78,3 +78,12 @@ class(dtObject)
 dtObject
 ```
 
+```{r}
+typeof(dtObject)
+as.integer(dtObject)
+```
+
+```{r}
+Sys.timezone()
+```
+
