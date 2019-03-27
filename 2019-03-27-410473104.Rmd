@@ -125,5 +125,11 @@ is.na(y7)
 ```{r}
 sum(x2)
 sum(x6)
+sum(x6 , na.rm = F)
+sum(x6 , na.rm = T)
+```
+
+```{r}
+0/0
 ```
 
