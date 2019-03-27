@@ -1,0 +1,54 @@
+---
+title: '2019-03-27'
+author: "林茂廷"
+date: "3/27/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+a <- c(1, 5, -3)
+b <- c(0.5, 12, 2)
+```
+
+```{r}
+aL <- c(1L, 5L, -3L)
+bL <- c(-2L, -4L, 8L)
+```
+
+```{r}
+class(a+bL)
+class(aL+bL)
+class(a-bL)
+class(aL-bL)
+class(a*bL)
+class(aL*bL)
+class(a/bL)
+class(aL/bL)
+```
+
+```{r}
+a+b
+a-b
+a*b
+a/b
+```
+
+```{r}
+a+4
+a^b
+a %% b
+```
+
+```{r}
+library(lubridate)
+twDateTime <- ymd_hms("2019-03-18 14:04:00", tz="Asia/Taipei")
+```
+
+```{r}
+ymd("2019-08-11")-ymd("2000-02-01")
+```
+
