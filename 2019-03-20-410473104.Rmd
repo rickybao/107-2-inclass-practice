@@ -113,3 +113,9 @@ ymd("2018-09-11", tz="Asia/Taipei") -> a
 mdy("March 3, 2019", tz="Asia/Taipei") -> b
 ```
 
+```{r}
+as.integer(ymd("1970-01-01"))
+as.integer(ymd("1970-01-02"))
+as.integer(ymd("2019-03-11"))
+```
+
