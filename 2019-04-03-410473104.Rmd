@@ -40,7 +40,6 @@ head(currency) # head 會顯示物件前六個元素值。
 levels(currency)
 ```
 
-
 資料一進來並沒有被當成factor class
 ```{r}
 class(currency)
@@ -88,6 +87,11 @@ currency2
 ```
 
 ```{r}
+currency2 == "日元"
+```
+
+
+```{r}
 sum(currency2 == "日元")
 ```
 
@@ -95,6 +99,11 @@ sum(currency2 == "日元")
 head(currency)
 sum(currency == "日圓JPY/USD")
 ```
+
+```{r}
+(currency == "日圓JPY/USD")
+```
+
 
 # 5.4 Logical Operators
 
@@ -117,12 +126,6 @@ y5 <- c("女","男","女")
 
 y5=="女"
 ```
-
-
-
-
-
-
 
 ```{r}
 !(y5=="女")
