@@ -35,6 +35,7 @@ currency <- exData2$幣別
 ```{r}
 head(currency) # head 會顯示物件前六個元素值。
 ```
+
 ```{r}
 levels(currency)
 ```
