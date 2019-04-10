@@ -96,3 +96,53 @@ d <- str_sub(birthday,7,8)
 str_c("西元",y,"年",m,"月",d,"日")
 ```
 
+民國年月
+```{r}
+ym <- c("099/01","099/02","099/03")
+str_sub(ym,1,3)
+as.integer(str_sub(ym,1,3))
+as.integer(str_sub(ym,1,3)) -> num
+```
+
+```{r}
+num+1911 -> w
+num+1911
+```
+
+```{r}
+as.character(w)
+str_c(as.character(w),str_sub(ym,4,6)) -> new
+new
+```
+
+# Ch6
+```{r}
+a<-c(1:3)
+typeof(a)
+a
+```
+
+```{r}
+aWithNames <- c(
+  a1=1,
+  a2=2,
+  a3=3
+)
+typeof(a)
+aWithNames
+```
+
+```{r}
+b1<-list("a","b",c(1:10))
+typeof(b1)
+```
+
+```{r}
+b2<-list(一="a", 二="b", 三=c(1:10))
+```
+
+```{r}
+b1
+b2
+```
+
