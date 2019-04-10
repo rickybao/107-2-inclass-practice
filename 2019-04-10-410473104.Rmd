@@ -47,3 +47,14 @@ str_c(month,c("月"),day,c("日"))
 str_c(month,"月",day,"日")
 ```
 
+```{r}
+month
+day
+str_c(month,day, sep="-")
+```
+
+```{r}
+dates <- c("3-11", "4-5",  "2-7")
+str_split(dates,"-")
+```
+
