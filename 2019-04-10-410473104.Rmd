@@ -58,3 +58,27 @@ dates <- c("3-11", "4-5",  "2-7")
 str_split(dates,"-")
 ```
 
+```{r}
+dates
+str_replace(dates,"-","月")
+```
+
+```{r}
+dates2 <- c("3-11-2019", "4-5-2017",  "2-7-2015")
+dates2
+str_replace(dates2,"-","/")
+str_replace_all(dates2,"-","/")
+```
+
+```{r}
+library(readr)
+githubData <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/githubData.csv")
+username <- githubData$`GitHub username`[11:16]
+reponame <- githubData$`GitHub repo name`[11:16]
+```
+
+```{r}
+str_c("http://github.com/",username,"/",reponame)
+str_c("http://github.com",username,reponame,sep="/")
+```
+
