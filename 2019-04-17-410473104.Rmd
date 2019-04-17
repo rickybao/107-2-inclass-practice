@@ -118,3 +118,7 @@ commitCheck <- content(GET(commitCheckStatement))
 commitCheckStatement
 ```
 
+```{r}
+commitCheck[[4]][["commit"]][["author"]][["date"]]
+```
+
