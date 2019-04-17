@@ -115,5 +115,6 @@ str_replace_all(
     )
   ) -> commitCheckStatement
 commitCheck <- content(GET(commitCheckStatement))
+commitCheckStatement
 ```
 
