@@ -83,7 +83,15 @@ matObj1
 ```
 
 ```{r}
-chosenLETTERS[8]
+m <- matrix(chosenLETTERS,2,4)
+m
+tolower(m) # 轉成小寫
+m
+toupper(m) # 轉成大寫
+```
+
+```{r}
+chosenLETTERS[[8]]
 matObj1[8]
 ```
 
