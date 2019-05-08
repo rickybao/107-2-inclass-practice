@@ -114,12 +114,20 @@ str_c("民國",str_pad(yy,3,"left","0"),"年",mm,"月") -> twDates
 請將twDates中的"民國"及"月"都去除，並存在twDates2答案物件，如："民國099年2月"會變成"099年2"。
 ```{r ans51}
 # twDates2
+str_replace(twDates,"民國","") -> twDates2
+str_replace(twDates2,"月","") -> twDates2  
+twDates2
 ```
 
 ### 5.2 取出年份
 取出民國年的並加上1911年轉成西元年，將此年份存在答案物件westYears裡（class為integer）。(hint: `str_split()`可分割字串,再使用第3題取出你要的部份)
 ```{r ans52}
 # westYears
+str_split(twDates2,"年") -> dateList
+map(dateList,~.[[1]]) -> yy
+as.integer(yy)+1911 -> westYears
+
+westYears
 ```
 
 ### 5.3 西元年月日
@@ -127,6 +135,11 @@ str_c("民國",str_pad(yy,3,"left","0"),"年",mm,"月") -> twDates
 
 ```{r ans53}
 # westDates
+map(dateList,~.[[2]]) -> mm
+str_c(westYears,mm,"1",sep="-") -> ymdString
+ymd(ymdString) -> westDates
+
+westDates
 ```
 
 
