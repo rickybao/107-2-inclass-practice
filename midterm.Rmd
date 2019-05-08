@@ -215,8 +215,8 @@ sampledTranscriptData$學屆 <-
   str_sub(sampledTranscriptData$學號,2,4)
 sampledTranscriptData$系碼 <- 
   str_sub(sampledTranscriptData$學號,5,6)
-
-sampledTranscriptData
+tail(sampledTranscriptData$學號) # or head()
+tail(sampledTranscriptData$系碼) # or head()
 ```
 
 ### 7.3 產生學系 str_replace_all
