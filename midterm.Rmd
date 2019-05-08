@@ -224,12 +224,24 @@ tail(sampledTranscriptData$系碼) # or head()
 
 ```{r ans73}
 # sampledTranscriptData$學系 
+sampledTranscriptData$學系 <- str_replace(sampledTranscriptData$系級,"[:digit:]","")
+
+sampledTranscriptData$學系
 ```
 
 ### 7.4 轉系生
 學號是一入學就決定，不管後來有沒有轉系。 請找出外系轉入經濟系的學生學號，並存成changeMajorStudent答案物件。(由於資料一筆為一科成績，所以學號會重覆出現，要存入答案物件前請用`unique()`去除重覆學號)
 ```{r ans74}
 # changeMajorStudent
+(sampledTranscriptData$學系=="經濟學系") -> logiCheck
+
+sampledTranscriptData$學號[logiCheck] 
+
+unique(sampledTranscriptData$學號[logiCheck]) -> changeMajorStudent
+
+changeMajorStudent
+
+list(學系=,  系碼=)
 ```
 
 ### 7.5 學期平均成績
