@@ -142,6 +142,22 @@ ymd(ymdString) -> westDates
 westDates
 ```
 
+twDates2
+str_split(twDates2,"年") -> datesSplitList # 用年切開 年 月值
+datesSplitList
+
+map(datesSplitList,~.[[2]]) -> monthList # 選出每個元素的第二個值
+monthList
+
+unlist(monthList) -> monthVector # 將list疊成字串向量
+monthVector
+
+str_c(as.character(westYears),monthVector,"01",sep = "-") -> westDates # 貼成YYYY-MM-DD 字串格式
+westDates
+
+ymd(westDates) -> westDates # 轉成dates
+westDates
+class(westDates)
 
 ## 6 differen time zone
 執行以下程式引入invoiceList物件，其中「訂單時區」與「訂單時間(以訂單時區顯示)」的每筆資料是訂單來自時區及以該時區輸入的下單時間字串，「UTC時間」則是個目前無特別意義的UTC時間。
