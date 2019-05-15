@@ -17,7 +17,7 @@ names(Vector1)
 ```
 
 ```{r}
-Mat1 <- matrix(  c(1:6), 2,3)
+Mat1 <- matrix(c(1:6),2,3)
 Mat1
 names(Mat1) 
 ```
@@ -45,5 +45,29 @@ matObj1
 ```{r}
 rownames(matObj1) <- c('行：1','行：2','行：3','行：4','行：5')
 matObj1
+```
+
+```{r}
+a <- c("1","b","TRUE")
+a
+a[[2]] <- "c" # 元素存在
+a[[5]] <- "7" # 元素不存在
+a
+```
+
+```{r}
+b <- list(元素1=1,元素2="Hello",元素3=TRUE)
+b
+b[[3]] <- FALSE
+b[[5]] <- 7
+b
+```
+
+```{r}
+library(readr)
+exData3 <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/exData3.csv",
+                    col_types = cols(
+                      匯率 = col_number(),
+                      期間 = col_character()))
 ```
 
