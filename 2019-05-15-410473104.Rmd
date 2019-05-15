@@ -71,7 +71,35 @@ b
 
 ```{r}
 library(readr)
-exData3 <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/exData3.csv",
-                    col_types = cols(匯率 = col_number(),期間 = col_character()))
+exData3 <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/exData3.csv",col_types = cols(匯率 = col_number(),期間 = col_character()))
+```
+
+```{r}
+library(lubridate)
+ymd(exData3$期間) -> exData3$期間
+class(exData3$期間)
+```
+
+```{r}
+exData3$期間 >= ymd("1997-06-01") -> ac1
+exData3$期間 <= ymd("1998-12-01") -> ac2
+ac1 == TRUE & ac2 == TRUE -> isAsiaCrisis
+isAsiaCrisis -> exData3$isAsiaCrisis
+exData3$isAsiaCrisis
+```
+
+```{r}
+exData3[isAsiaCrisis,]
+```
+
+```{r}
+library(readr)
+transcriptDataFinal <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/transcriptDataFinal.csv")
+```
+
+```{r}
+studentID <-"92aS67fee" 
+transcriptDataFinal$學號==studentID -> logiChosenStudent
+sum(transcriptDataFinal$學期成績[logiChosenStudent]*transcriptDataFinal$學分數[logiChosenStudent])/sum(transcriptDataFinal$學分數[logiChosenStudent]) -> GPA
 ```
 
