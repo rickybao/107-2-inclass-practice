@@ -1,0 +1,38 @@
+---
+title: '2019-04-24'
+author: "林茂廷"
+date: "4/24/2019"
+output: html_document
+---
+
+```{r}
+Vector1 <- letters[1:6]
+Vector1
+names(Vector1)
+```
+
+```{r}
+names(Vector1) <- c('名稱1','名稱2','名稱3','名稱4','名稱5','名稱6')
+names(Vector1)
+```
+
+```{r}
+LETTERS # R內設元素值為英文字母群的character vector
+chosenLETTERS <- LETTERS[1:15]
+matObj1 <- matrix(chosenLETTERS,5,3)
+matObj1
+colnames(matObj1) 
+rownames(matObj1)
+```
+
+```{r}
+colnames(matObj1) <-c('欄位1','欄位2','欄位3')
+colnames(matObj1)
+matObj1
+```
+
+```{r}
+rownames(matObj1) <- c('行：1','行：2','行：3','行：4','行：5')
+matObj1
+```
+
