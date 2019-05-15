@@ -17,6 +17,17 @@ names(Vector1)
 ```
 
 ```{r}
+Mat1 <- matrix(  c(1:6), 2,3)
+Mat1
+names(Mat1) 
+```
+
+```{r}
+names(Mat1) <- letters[1:6]
+names(Mat1)
+```
+
+```{r}
 LETTERS # R內設元素值為英文字母群的character vector
 chosenLETTERS <- LETTERS[1:15]
 matObj1 <- matrix(chosenLETTERS,5,3)
