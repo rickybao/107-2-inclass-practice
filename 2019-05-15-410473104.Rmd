@@ -64,10 +64,14 @@ b
 ```
 
 ```{r}
+b[["新元素A"]] <- c(1,3,2)
+b$新元素B <- c(T,F,T)
+b
+```
+
+```{r}
 library(readr)
 exData3 <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/exData3.csv",
-                    col_types = cols(
-                      匯率 = col_number(),
-                      期間 = col_character()))
+                    col_types = cols(匯率 = col_number(),期間 = col_character()))
 ```
 
