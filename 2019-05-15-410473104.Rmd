@@ -101,6 +101,10 @@ transcriptDataFinal <- read_csv("https://raw.githubusercontent.com/tpemartin/git
 studentID <-"92aS67fee" 
 transcriptDataFinal$學號==studentID -> logiChosenStudent
 sum(transcriptDataFinal$學期成績[logiChosenStudent]*transcriptDataFinal$學分數[logiChosenStudent])/sum(transcriptDataFinal$學分數[logiChosenStudent]) -> GPA
+transcriptDataFinal$學號=="223S63286" -> tl
+transcriptDataFinal$學號=="105S60ba1" -> ol
+sum(transcriptDataFinal$學期成績[tl]*transcriptDataFinal$學分數[tl])/sum(transcriptDataFinal$學分數[tl]) -> GPA2
+sum(transcriptDataFinal$學期成績[ol]*transcriptDataFinal$學分數[ol])/sum(transcriptDataFinal$學分數[ol]) -> GPA1
 ```
 
 ```{r}
