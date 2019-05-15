@@ -118,3 +118,12 @@ class(utility_cobb_douglass)
 utility_cobb_douglass(1,2,0.5,0.8)
 ```
 
+```{r}
+supply_fun <- function(a,b,P){sp <- a+b*P
+return(sp)}
+demand_fun <- function(c,d,P){dm <- c-d*P
+return(dm)}
+supply_fun(0,1,1)
+demand_fun(5,1,1)
+```
+
