@@ -19,3 +19,29 @@ ymd_hms_tzChange <- function(input,fromTzone,toTzone){ymd_hms(input,tz=fromTzone
 ymd_hms_tzChange("1973-02-21 12:05:22","America/New_York","Asia/Taipei")
 ```
 
+```{r}
+library(stringr)
+sample(99:103,15,replace = T)-> yy
+sample(1:12,15,replace=T)-> mm
+str_c("民國",str_pad(yy,3,"left","0"),"年",mm,"月") -> twDates
+```
+
+```{r}
+library(stringr); library(lubridate)
+yyyy<-as.integer(str_extract(twDates,"(?<=(民國))[:digit:]+"))+1911
+mm<-str_extract(twDates,"[:digit:]+(?=月)")
+yyyymmdd <- ymd(str_c(yyyy,mm,"01",sep="-"))
+yyyymmdd
+```
+
+```{r}
+sample(99:103,15,replace = T)-> yy
+sample(1:12,15,replace=T)-> mm
+str_c("民國",str_pad(yy,3,"left","0"),"年",mm,"月") -> x
+date_convert_twYM <- function(x,dd="01"){yyyy <- as.integer(str_extract(x,"(?<=(民國))[:digit:]+"))+1911
+ mm<-str_extract(x,"[:digit:]+(?=月)")
+ yyyymmdd <- ymd(str_c(yyyy,mm,dd,sep="-"))
+  return(yyyymmdd)}
+date_convert_twYM(x,02)
+```
+
