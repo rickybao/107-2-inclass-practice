@@ -5,3 +5,17 @@ date: "4/24/2019"
 output: html_document
 ---
 
+```{r}
+library(lubridate)
+ymd_hms("1973-02-21 12:05:22",tz="America/New_York") -> ipdt
+with_tz(input,tz="Asia/Taipei") -> opdt
+opdt
+```
+
+```{r}
+ymd_hms_tzChange <- function(input,fromTzone,toTzone){ymd_hms(input,tz=fromTzone) -> ftz
+  with_tz(ftz,tz=toTzone) -> output
+  return(output)}
+ymd_hms_tzChange("1973-02-21 12:05:22","America/New_York","Asia/Taipei")
+```
+
