@@ -181,15 +181,10 @@ invoiceList
 
 ```{r ans62}
 # invoiceList 
-(invoiceList$訂單時區=="Asia/Taipei") -> tpLogical
-
-invoiceList$UTC時間[nyLogical] <-
-  with_tz(ymd_hms(invoiceList$`訂單時區之下單時間`[nyLogical],
-          tz="America/New_York"),tzone="UTC")
-invoiceList$UTC時間[tpLogical] <-
-  with_tz(ymd_hms(invoiceList$`訂單時區之下單時間`[tpLogical],
-          tz="Asia/Taipei"),tzone="UTC")
-
+(invoiceList[[1]]=="America/New_York") -> nyLogical
+(invoiceList[[1]]=="Asia/Taipei") -> tpLogical
+invoiceList[[3]][nyLogical] <- with_tz(ymd_hms(invoiceList[[2]][nyLogical], tz="America/New_York"),tzone="UTC")
+invoiceList[[3]][tpLogical] <- with_tz(ymd_hms(invoiceList[[2]][tpLogical], tz="Asia/Taipei"),tzone="UTC")
 invoiceList 
 ```
 
