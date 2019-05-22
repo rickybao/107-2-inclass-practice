@@ -8,7 +8,7 @@ output: html_document
 ```{r}
 library(lubridate)
 ymd_hms("1973-02-21 12:05:22",tz="America/New_York") -> ipdt
-with_tz(input,tz="Asia/Taipei") -> opdt
+with_tz(ipdt,tz="Asia/Taipei") -> opdt
 opdt
 ```
 
