@@ -7,9 +7,6 @@ output: html_document
 
 ```{r}
 library(lubridate)
-```
-
-```{r}
 now2 <- function(){
   currentDateTime <- Sys.time()
   hh<-hour(currentDateTime)
@@ -30,9 +27,6 @@ textbookURL()
 
 ```{r}
 library(readr)
-```
-
-```{r}
 transcriptDataFinal <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/transcriptDataFinal.csv")
 ```
 
@@ -69,5 +63,14 @@ gpa_fun2 <- function(studentID){
 gpa_fun2("92aS67fee") -> outputValue
 outputValue$平均成績
 outputValue$成績單
+```
+
+```{r}
+demand_supply_fun <- function(P,a,b,c,d){
+  qs=a+b*P
+  qd=c-d*P
+  ex=qs-qd
+  return(list(供給量=qs,需求量=qd,超額供給量=ex))
+}
 ```
 
