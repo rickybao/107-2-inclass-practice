@@ -22,12 +22,13 @@ now2() -> xx
 
 ```{r}
 browseURL("https://www.ntpu.edu.tw")
-```
-
-```{r}
 textbookURL <- function(){
   browseURL("https://bookdown.org/tpemartin/ntpu-programming-for-data-science/")
 }
 textbookURL()
+```
+
+```{r}
+
 ```
 
