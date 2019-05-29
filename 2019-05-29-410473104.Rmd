@@ -130,9 +130,7 @@ supply_fun3(P=2,0,1)
 ```{r}
 gpa_fun <- function(studentID){
   transcriptDataFinal$學號==studentID -> logiChosenStudent
-  
   subSample <- transcriptDataFinal[logiChosenStudent,]
-  
   sum(subSample$學期成績*subSample$學分數)/
     sum(subSample$學分數) -> GPA
   if(transcriptDataFinal$學號 %in% studentID){
