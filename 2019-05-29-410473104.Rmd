@@ -1,12 +1,15 @@
 ---
-title: '2019-04-24'
+title: '2019-05-29'
 author: "林茂廷"
-date: "4/24/2019"
+date: "5/29/2019"
 output: html_document
 ---
 
 ```{r}
 library(lubridate)
+```
+
+```{r}
 now2 <- function(){
   currentDateTime <- Sys.time()
   hh<-hour(currentDateTime)
@@ -72,5 +75,74 @@ demand_supply_fun <- function(P,a,b,c,d){
   ex=qs-qd
   return(list(供給量=qs,需求量=qd,超額供給量=ex))
 }
+```
+
+```{r}
+a <- readline(prompt = "請輸入一個數字： ")
+if(a < 0) {
+  print("a為負值")
+}
+```
+
+```{r}
+a<-0
+b<-1
+supply_fun <- function(P,a,b){
+  Qs <- a+b*P
+  return(Qs)
+}
+supply_fun(P=-1,0,1)
+```
+
+```{r}
+supply_fun2 <- function(P,a,b){
+  Qs <- a+b*P
+  if(P>=0) {
+    return(Qs)
+  }
+}
+supply_fun2(P=-1,0,1)
+supply_fun2(P=2,0,1)
+```
+
+```{r}
+a <-  readline(prompt = "請輸入一個數字： ")
+if(a < 0) {
+  print("a為負值")
+} else {
+  print("a不為負值")
+}
+```
+
+```{r}
+supply_fun3 <- function(P,a,b){
+  Qs <- a+b*P
+  if(P < 0) {
+    message("P不能為負值") # 在螢幕出現的「錯誤」提示，沒有輸出任何值
+  } else {
+    return(Qs)
+  }
+}
+supply_fun3(P=-1,0,1)
+supply_fun3(P=2,0,1)
+```
+
+```{r}
+gpa_fun <- function(studentID){
+  transcriptDataFinal$學號==studentID -> logiChosenStudent
+  
+  subSample <- transcriptDataFinal[logiChosenStudent,]
+  
+  sum(subSample$學期成績*subSample$學分數)/
+    sum(subSample$學分數) -> GPA
+  if(transcriptDataFinal$學號 %in% studentID){
+    return(GPA)
+  }else{message("查無此學號")}
+}
+```
+
+```{r}
+gpa_fun("92aS67fee") # 顯示82.85276
+gpa_fun("aa829838s") # 查無此學號
 ```
 
