@@ -5,3 +5,49 @@ date: "4/24/2019"
 output: html_document
 ---
 
+```{r}
+load(url("https://github.com/tpemartin/github-data/blob/master/loopTranscriptData.Rda?raw=true"))
+```
+
+```{r}
+studentIds <- unique(transcriptDataFinal$學號) # 全部可能學號
+```
+
+```{r}
+# 以前5筆學號為sequence_source
+studentIds5 <- studentIds[1:5]
+```
+
+```{r}
+for(i in studentIds5){
+  print(i) # 印出studentIds5[[i]]
+}
+```
+
+```{r}
+for(i in c(1:5)){
+  print(i) 
+}
+```
+
+```{r}
+for(i in c(1:5)){
+  print(studentIds5[[i]]) # 
+}
+```
+
+```{r}
+for(i in seq_along(studentIds5)){
+  print(studentIds5[[i]])
+}
+```
+
+```{r}
+gmailAddress <- c(
+  "tim@gmail.com",
+  "anita",
+  "yellen@gmail.com",
+  "huang@gmail.com"
+)
+```
+
