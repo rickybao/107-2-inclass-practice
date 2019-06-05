@@ -51,3 +51,9 @@ gmailAddress <- c(
 )
 ```
 
+```{r}
+for(i in seq_along(gmailAddress)){
+  print(gmailAddress[[i]])
+}
+```
+
