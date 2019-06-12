@@ -76,3 +76,16 @@ for(i in seq_along(commitHistory)){
 }
 ```
 
+```{r}
+for(i in seq_along(commitHistory)){
+  print(
+    str_c(
+      "Author is ",
+      commitHistory[[i]][["commit"]][["author"]][["name"]],
+      ". Committer is ",
+      commitHistory[[i]][["commit"]][["committer"]][["name"]]
+      )
+    )
+}
+```
+
