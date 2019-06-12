@@ -91,27 +91,6 @@ for(i in seq_along(commitHistory)){
 
 ```{r}
 for(i in seq_along(commitHistory)){
-  commitHistory[[i]][["commit"]][["author"]][["name"]] -> chcan
-  print(chcan)
-}
-```
-
-```{r}
-for(i in seq_along(commitHistory)){
-  commitHistory[[i]][["commit"]][["committer"]][["name"]] -> chccn
-  print(chccn)
-}
-```
-
-```{r}
-for(i in seq_along(commitHistory)){
-  commitHistory[[i]][["commit"]][["committer"]][["date"]] -> chccd
-  print(chccd)
-}
-```
-
-```{r}
-for(i in seq_along(commitHistory)){
   commitHistory[[i]][["commit"]][["author"]][["name"]] == commitHistory[[i]][["commit"]][["committer"]][["name"]] -> logiResult
   print(logiResult)
 }
@@ -172,5 +151,52 @@ names(saveGPAsWithNames) <- studentIds
 
 saveGPAs[1:5] # 元素沒有名字
 saveGPAsWithNames[1:5] # 元素有名字
+```
+
+```{r}
+load(url("https://www.dropbox.com/s/qnz9paigf61yjus/commitHistory.Rda?raw=1"))
+saveCommitAuthor <-
+  vector("character",length(commitHistory))
+commitHistory
+```
+
+```{r}
+i<- 1
+
+commitHistory[[i]]$commit$author$name -> saveCommitAuthor[[i]]
+```
+
+```{r}
+saveCommitAuthor
+```
+
+```{r}
+saveCommitAuthor <-
+  vector("character",length(commitHistory)) # 0.
+for(i in seq_along(commitHistory)){
+  commitHistory[[i]]$commit$author$name -> saveCommitAuthor[[i]]
+}
+
+saveCommitAuthor
+```
+
+```{r}
+saveCommitCommitter <-
+  vector("character",length(commitHistory)) # 0.
+for(i in seq_along(commitHistory)){
+  commitHistory[[i]]$commit$committer$name -> saveCommitCommitter[[i]]
+}
+
+saveCommitCommitter
+```
+
+```{r}
+saveCommitDate <-
+  vector("character",length(commitHistory)) # 0.
+for(i in seq_along(commitHistory)){
+  commitHistory[[i]]$commit$committer$date -> saveCommitDate[[i]]
+}
+
+saveCommitDate
 ```
 
