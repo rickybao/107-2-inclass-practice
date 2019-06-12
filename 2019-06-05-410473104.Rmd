@@ -89,3 +89,31 @@ for(i in seq_along(commitHistory)){
 }
 ```
 
+```{r}
+for(i in seq_along(commitHistory)){
+  commitHistory[[i]][["commit"]][["author"]][["name"]] -> chcan
+  print(chcan)
+}
+```
+
+```{r}
+for(i in seq_along(commitHistory)){
+  commitHistory[[i]][["commit"]][["committer"]][["name"]] -> chccn
+  print(chccn)
+}
+```
+
+```{r}
+for(i in seq_along(commitHistory)){
+  commitHistory[[i]][["commit"]][["committer"]][["date"]] -> chccd
+  print(chccd)
+}
+```
+
+```{r}
+for(i in seq_along(commitHistory)){
+  commitHistory[[i]][["commit"]][["author"]][["name"]] == commitHistory[[i]][["commit"]][["committer"]][["name"]] -> logiResult
+  print(logiResult)
+}
+```
+
