@@ -4,16 +4,13 @@ author: "林茂廷"
 date: "4/24/2019"
 output: html_document
 ---
+```{r}
+library(stringr)
+```
 
 ```{r}
 load(url("https://github.com/tpemartin/github-data/blob/master/loopTranscriptData.Rda?raw=true"))
-```
-
-```{r}
 studentIds <- unique(transcriptDataFinal$學號) # 全部可能學號
-```
-
-```{r}
 # 以前5筆學號為sequence_source
 studentIds5 <- studentIds[1:5]
 ```
@@ -55,5 +52,17 @@ gmailAddress <- c(
 for(i in seq_along(gmailAddress)){
   print(gmailAddress[[i]])
 }
+```
+
+```{r}
+for(i in seq_along(gmailAddress)){
+  if(!str_detect(gmailAddress[[i]],"@gmail.com")){
+    correctGmailAddress <-
+      str_c(gmailAddress[[i]],"@gmail.com")
+    gmailAddress[[i]] <- correctGmailAddress
+  }
+}
+cat("修正後狀況\n")
+gmailAddress
 ```
 
