@@ -117,3 +117,60 @@ for(i in seq_along(commitHistory)){
 }
 ```
 
+```{r}
+saveCharacter <- vector("character",5)
+saveCharacter
+saveNumeric <- vector("numeric",5)
+saveNumeric
+saveLogical <- vector("logical",5)
+saveLogical
+saveList <- vector("list",5)
+saveList
+```
+
+```{r}
+# 把"你好"存在saveCharacter第3個位置
+saveCharacter # 儲存前
+saveCharacter[[3]] <- "你好"
+saveCharacter # 儲存後
+# 把 72.3 存在saveNumeric第3個位置
+saveNumeric # 儲存前
+saveNumeric[[3]] <- 72.3
+saveNumeric # 儲存後
+# 把 TRUE 存在saveLogical第3個位置
+saveLogical # 儲存前
+saveLogical[[3]] <- TRUE
+saveLogical # 儲存後
+# 把 list(姓名="小明",電話="02-86741111") 存在saveList第3個位置
+saveList # 儲存前
+saveList[[3]] <- list(姓名="小明",電話="02-86741111")
+saveList # 儲存後
+```
+
+```{r}
+studentIds <- unique(transcriptDataFinal$學號) # sequence_source
+saveGPAs <- vector("numeric",length(studentIds)) # saveContainer
+```
+
+```{r}
+i <- 1
+saveGPAs[[i]] <- gpa_fun(studentIds[[i]])
+saveGPAs
+```
+
+```{r}
+studentIds <- unique(transcriptDataFinal$學號) # sequence_source
+saveGPAs <- vector("numeric",length(studentIds)) # saveContainer
+for(i in seq_along(studentIds)){
+  saveGPAs[[i]] <- gpa_fun(studentIds[[i]])
+}
+```
+
+```{r}
+saveGPAsWithNames <- saveGPAs
+names(saveGPAsWithNames) <- studentIds
+
+saveGPAs[1:5] # 元素沒有名字
+saveGPAsWithNames[1:5] # 元素有名字
+```
+
