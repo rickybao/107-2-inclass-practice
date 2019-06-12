@@ -66,3 +66,13 @@ cat("修正後狀況\n")
 gmailAddress
 ```
 
+```{r}
+load(url("https://www.dropbox.com/s/qnz9paigf61yjus/commitHistory.Rda?raw=1"))
+```
+
+```{r}
+for(i in seq_along(commitHistory)){
+  print(commitHistory[[i]][["commit"]][["author"]][["name"]])
+}
+```
+
